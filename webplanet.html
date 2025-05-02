@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Planet Tata Surya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>MEMBUAT WEB PLANET DENGAN HTML</h1>
+    </header>
+
+    <div class="container">
+        <div class="menu menu-kiri">
+            <h3>PLANET DEKAT</h3>
+            <a href="#" onclick="loadContent('merkurius')">Merkurius</a>
+            <a href="#" onclick="loadContent('venus')">Venus</a>
+            <a href="#" onclick="loadContent('bumi')">Bumi</a>
+        </div>
+
+        <div class="main-content" id="mainContent" style="text-align: center;">
+            <h2>Selamat Datang di Web Tata Surya</h2>
+            <img src="galaksi.png"
+            <hr>
+            <p>Tata Surya adalah kumpulan benda langit yang terdiri dari Matahari sebagai 
+                pusatnya dan semua objek yang mengorbitnya karena pengaruh gravitasi. Tata 
+                Surya terbentuk sekitar 4,6 miliar tahun yang lalu dari awan gas dan debu 
+                kosmik yang runtuh di bawah gravitasinya sendiri. Objek-objek yang mengorbit 
+                Matahari mencakup delapan planet utama, yaitu Merkurius, Venus, Bumi, Mars, 
+                Jupiter, Saturnus, Uranus, dan Neptunus, beserta satelit alami (bulan), asteroid, 
+                komet, meteoroid, dan debu antariksa. Planet-planet dibagi menjadi dua kelompok 
+                berdasarkan jaraknya dari Matahari: planet dalam (dekat) yang berbatu—Merkurius 
+                hingga Mars, dan planet luar (jauh) yang terdiri dari raksasa gas dan es—Jupiter 
+                hingga Neptunus. Matahari, sebagai bintang pusat, menyediakan energi dan gravitasi 
+                yang menjaga kestabilan orbit benda-benda langit di sekitarnya. Tata Surya merupakan 
+                bagian kecil dari galaksi Bima Sakti dan memainkan peran penting dalam mendukung 
+                kehidupan, terutama di Bumi yang merupakan satu-satunya planet yang diketahui memiliki 
+                kondisi layak huni hingga saat ini. </p>
+        </div>
+        
+
+        <div class="menu menu-kanan">
+            <h3>PLANET JAUH</h3>
+            <a href="#" onclick="loadContent('mars')">Mars</a>
+            <a href="#" onclick="loadContent('jupiter')">Jupiter</a>
+            <a href="#" onclick="loadContent('saturnus')">Saturnus</a>
+        </div>
+    </div>
+
+    <footer>
+        Dibuat menggunakan HTML | Nama: RIFKY LAUPIKRAM | Jurusan: Teknik Informatika
+    </footer>
+
+    <script>
+        const planetData = {
+            merkurius: {
+                title: "Planet Merkurius",
+                color: "Beige",
+                img: "markurius.png",
+                text: "Merkurius adalah planet terkecil di tata surya kita dan planet terdekat dengan Matahari. Planet ini memiliki permukaan yang penuh kawah, dan suhunya sangat ekstrem, dari 430 derajat Celsius di siang hari hingga -180 derajat Celsius di malam hari. Merkurius tidak memiliki satelit alami dan atmosfernya sangat tipis. "
+            },
+            venus: {
+                title: "Planet Venus",
+                color: "Beige",
+                img: "venus.png",
+                text: "Planet Venus adalah planet terpanas dan paling terang di tata surya, serta planet kedua yang paling dekat dengan Matahari setelah Merkurius. Ia sering disebut sebagai planet saudara Bumi karena ukuran dan komposisi yang serupa, namun atmosfernya yang sangat padat membuat Venus sangat panas. "
+            },
+            bumi: {
+                title: "Planet Bumi",
+                color: "Beige",
+                img: "bumi.png",
+                text: "Planet Bumi adalah planet ketiga dari Matahari dan satu-satunya planet yang diketahui memiliki kehidupan. Bumi adalah planet terbesar kelima dalam Tata Surya dan planet terestrial terbesar. Bumi juga dikenal sebagai planet biru karena sebagian besar permukaannya tertutup air. "
+            },
+            mars: {
+                title: "Planet Mars",
+                color: "Beige",
+                img: "mars.png",
+                text: "Planet Mars adalah planet terdekat keempat dari Matahari dan dikenal sebagai Planet Merah karena warna kemerahannya. Mars memiliki diameter sekitar setengah diameter Bumi, dan permukaannya ditutupi oleh kawah, gunung berapi, lembah, gurun, dan es. Mars juga memiliki dua satelit alami, Phobos dan Deimos. "
+            },
+            jupiter: {
+                title: "Planet Jupiter",
+                color: "Beige",
+                img: "jupiter.png",
+                text: "Planet Jupiter adalah planet kelima dari Matahari dan planet terbesar di tata surya kita. Ia adalah raksasa gas yang terdiri dari hidrogen dan helium, dengan massa lebih dari dua kali massa gabungan semua planet lain di tata surya. Jupiter memiliki hari terpendek di tata surya, sekitar 9,9 jam, dan memiliki sedikitnya 95 bulan. "
+            },
+            saturnus: {
+                title: "Planet Saturnus",
+                color: "Beige",
+                img: "saturnus.png",
+                text: "Saturnus adalah planet keenam dari Matahari dan planet terbesar kedua di tata surya kita, setelah Jupiter. Saturnus terkenal karena sistem cincinnya yang indah dan besar, serta memiliki banyak satelit, termasuk Titan yang besar. "
+            }
+        };
+
+        function loadContent(planet) {
+            const data = planetData[planet];
+            const container = document.getElementById('mainContent');
+            container.style.backgroundColor = data.color;
+            container.innerHTML = `
+                <h2>${data.title}</h2>
+                <img src="${data.img}" alt="${planet}" style="width:250px; float:right; margin:10px;">
+                <p>${data.text}</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
